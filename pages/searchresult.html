@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="../plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../styles/custom.css">
+    <link rel="manifest" href="../manifest.json">
+    <title>OLX - Pakistan</title>
+</head>
+<body onload="searchOnLoad()">
+    <nav>
+        <div class="nav-wrapper blue darken-1">
+            <div class="container">
+                <a href="#" class="brand-logo">OLX</a>
+                <ul id="nav-mobile" class="right">
+						<li><a href="../index.html">Home</a></li>
+					<!-- Dropdown Trigger -->
+					<a class='dropdown-trigger btn blue darken-1' style="box-shadow:none;" href='#' id="ddl" data-target='dropdown1'>Drop Me!</a>
+					
+					<!-- Dropdown Structure -->
+					<ul id='dropdown1' class='dropdown-content'>
+						<li><a href="./profile.html">Profile</a></li>
+						<li><a href="./postad.html">Post Ad</a></li>
+						<li><a href="./chat.html">Messages</a></li>
+						<li><a onclick="logout()" href="JavaScript:void(0)">logout</a></li>
+					</ul>
+				</ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <h4>Search Result</h4>
+            <div class="col m9 s12 offset-m1">
+                <div class="input-field col m6 s12">
+                    <input id="search" type="text" class="validate">
+                    <label for="search">Search</label>
+                </div>
+                <div class="input-field col m4 s12">
+                    <select id="selectCategory">
+                        <option value="" disabled selected>Select a category</option>
+                        <option value="Properties">Properties</option>
+                        <option value="Cars">Cars</option>
+                        <option value="Furnitures">Furniture</option>
+                        <option value="Jobs">Jobs</option>
+                        <option value="Electronics">Electronics & Appliances</option>
+                        <option value="Mobiles">Mobiles</option>
+                        <option value="Bikes">Bikes</option>
+                        <option value="Books">Books</option>
+                    </select>
+                </div>
+                <div class="col m2 s12">
+                        <a onclick="searchFromSearch()" style="margin-top:25px" href="JavaScript:void(0)" class="waves-effect waves-light btn btn-margin">Search</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="result" class="col s12">
+
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        M.AutoInit();
+    </script>
+</body>
+</html>

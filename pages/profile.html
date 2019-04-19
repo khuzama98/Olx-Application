@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/custom.css">
+    <link rel="manifest" href="../manifest.json">
+    <title>OLX - Pakistan</title>
+    <style>
+        h6{
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body onload="getProfileData();">
+       
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Choose Image</h4>
+            <div class="col m4">
+                <img id='profilepic' height="250px" width="250px" src="" alt="">
+            </div>
+            <input type="file" id="uploader" onchange="changepic(this)"  />
+            <a onclick="updateImg(this)"  href="JavaScript:void(0)" class="waves-effect waves-light btn right">Update Image</a>
+        </div>
+        <div class="modal-footer">
+            <a href="JavaScript:void(0)" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+        </div>
+    </div>
+    <nav>
+        <div class="nav-wrapper blue darken-1">
+            <div class="container">
+                <a href="#" class="brand-logo">OLX</a>
+                <ul id="nav-mobile" class="right">
+						<li><a href="../index.html">Home</a></li>
+					<!-- Dropdown Trigger -->
+					<a class='dropdown-trigger btn blue darken-1' style="box-shadow:none;" href='#' id="ddl" data-target='dropdown1'>Drop Me!</a>
+					
+					<!-- Dropdown Structure -->
+					<ul id='dropdown1' class='dropdown-content'>
+						<li><a href="./profile.html">Profile</a></li>
+						<li><a href="./postad.html">Post Ad</a></li>
+						<li><a href="./chat.html">Messages</a></li>
+						<li><a onclick="logout()" href="JavaScript:void(0)">logout</a></li>
+					</ul>
+				</ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col s12">
+                <div style="margin-top:20px;" class="col m4 s12">
+                    <div class="col s12">
+                        <img style="width:100%;max-height:250px;" id="userImg" alt="">
+                        <a onclick="openModalPic()" class="waves-effect waves-light btn right modal-trigger" href="#modal1">Change Profile Pic</a>
+                    </div>
+                    <div class="col s12" id="profileInfo"></div>
+                </div>
+                <div class="col m7 s12">
+                    <div>
+                        <h5 id="showAdsHeading" style="display:inline-block;">My Ads</h5>
+                        <a onclick="showSaved()" id="saveAdsBtn" style="margin-top:15px;" href="JavaScript:void(0)" class="waves-effect waves-light btn right">Saved Ads</a>
+                        <a onclick="showMyAds()" id="myAdsBtn" style="margin-top:15px;display:none;" href="JavaScript:void(0)" class="waves-effect waves-light btn right">My Ads</a>
+                    </div>
+                    <div class="preloader-wrapper big active">
+                        <div class="spinner-layer spinner-blue">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                        <div class="spinner-layer spinner-red">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div><div class="gap-patch">
+                                <div class="circle"></div>
+                            </div><div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="spinner-layer spinner-yellow">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div><div class="gap-patch">
+                                <div class="circle"></div>
+                            </div><div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="spinner-layer spinner-green">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div><div class="gap-patch">
+                                <div class="circle"></div>
+                            </div><div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="myAds"></div>
+                    <div style="display:none;" id="saveAds"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        M.AutoInit();
+    </script>
+</body>
+</html>

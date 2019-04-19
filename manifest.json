@@ -1,0 +1,15 @@
+{
+    "name": "OLX Application",
+    "short_name": "OLX App",
+    "theme_color": "#E6EAEA",
+    "background_color": "#E6EAEA",
+    "display": "standalone",
+    "start_url": "./index.html",
+    "icons": [
+      {
+        "src": "./images/24_OLX-512.png",
+        "sizes": "128x128 144x144 152x152 192x192 512x512",
+        "type": "image/png"
+      }
+    ]
+  } 
