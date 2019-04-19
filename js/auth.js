@@ -1,12 +1,12 @@
 "use strict";
 // Initialize Firebase
 let config = {
-    apiKey: "AIzaSyD2Qle9cZfrbwVK8Uu_w_YJX5eJa2dgXwI",
-    authDomain: "myolxproject98.firebaseapp.com",
-    databaseURL: "https://myolxproject98.firebaseio.com",
-    projectId: "myolxproject98",
-    storageBucket: "myolxproject98.appspot.com",
-    messagingSenderId: "301194228853"
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "h",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: ""
 };
 firebase.initializeApp(config);
 
